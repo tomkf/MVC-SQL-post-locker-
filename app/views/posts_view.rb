@@ -1,13 +1,4 @@
-# @id = attributes[:id]
-#   @url = attributes[:url]
-#   @votes = attributes[:votes]
-#   @title = attributes[:title]
-
-
-
 class PostsView
-  # TODO: implement methods called by the PostsController
-
 
   def display(info_from_controller)
     info_from_controller.each_with_index do |item, index|
