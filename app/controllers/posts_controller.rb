@@ -3,15 +3,12 @@ class PostsController
     @view = PostsView.new
   end
 
-  # #do not use global variable in this file
-
   def index
     db_info = Post.all
     @view.display(db_info)
   end
 
   def create
-    # TODO: implement creating a new post
     url = @view.gather_input("enter a url for your post")
     title = @view.gather_input("enter a title for your post")
     votes = @view.gather_input("enter number of votes")
@@ -21,8 +18,6 @@ class PostsController
   end
 
   def update
-    # TODO: implement updating an existing post
-    # need to get a post by id
     id_value = @view.gather_input("enter the id")
     my_post = Post.find(id_value.to_i)
     url = @view.gather_input("enter a url for your post")
@@ -35,7 +30,6 @@ class PostsController
   end
 
   def destroy
-    # TODO: implement destroying a post
     index
     db_info = Post.all
     user_input = @view.gather_input("What index would you like to remove")
@@ -46,7 +40,6 @@ class PostsController
   end
 
   def upvote
-    # TODO: implement upvoting a post
     index
     user_input = @view.gather_input("Enter index of post you want to update")
     user_index = user_input.to_i
