@@ -12,7 +12,6 @@ class Post
   def self.find(post_id)
     DB.results_as_hash = true
     post_hash = DB.execute("SELECT * FROM posts WHERE posts.id LIKE ? ", "#{post_id}%")
-    # convert keys to symbols
     if post_hash == []
       return nil
     else
